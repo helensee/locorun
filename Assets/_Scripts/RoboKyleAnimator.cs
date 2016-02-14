@@ -164,4 +164,11 @@ public class RoboKyleAnimator : MonoBehaviour
         }
        
     }
+
+	void OnTriggerEnter(Collider other) {
+		//Destroy(other.gameObject);
+		if (other.gameObject.CompareTag ("Diamond")) {
+			other.gameObject.SetActive (false);
+		}
+	}
 }
