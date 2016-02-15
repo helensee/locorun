@@ -147,5 +147,21 @@ public class RoboKyleAnimator : MonoBehaviour
 
             }
         }
+        // IDLE
+
+        // check if we are at idle, if so, let us Wave!
+        else if (currentBaseState.fullPathHash == idleState)
+        {
+            if (Input.GetButtonUp("Jump"))
+            {
+                anim.SetBool("Wave", true);
+            }
+        }
+        // if we enter the waving state, reset the bool to let us wave again in future
+        if (layer2CurrentState.fullPathHash == waveState)
+        {
+            anim.SetBool("Wave", false);
+        }
+       
     }
 }
